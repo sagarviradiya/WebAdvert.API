@@ -2,6 +2,20 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <Authors>Sagar viradiya</Authors>
+    <Company>None</Company>
+    <Product>WebAdvert Models</Product>
+    <PackageProjectUrl>https://github.com/sagarviradiya/WebAdvert.API</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/sagarviradiya/WebAdvert.API</RepositoryUrl>
+    <AssemblyName>WebAdvert.Models</AssemblyName>
+    <PackageId>WebAdvert.Models1</PackageId>
   </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="NuGet.CommandLine" Version="5.6.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
 
 </Project>
