@@ -3,8 +3,10 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.HealthChecks;
 using Microsoft.Extensions.Hosting;
 using System.IO;
+using WebAdvert.API.HealthChecks;
 using WebAdvert.API.Services;
 
 namespace WebAdvert.API
@@ -23,6 +25,7 @@ namespace WebAdvert.API
         {
             services.AddAutoMapper(typeof(Startup));
             services.AddTransient<IAdvertStorageService, DynemoDBAdvertStorageService>();
+            services.AddHealthChecks(checks => { checks.AddCheck<StoreageHealthCheck>("S3Check", new System.TimeSpan(0, 1, 0)); });
             services.AddControllers();
         }
 
@@ -47,7 +50,7 @@ namespace WebAdvert.API
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
-           
+            app.UseHealthChecks("/health");
             app.UseHttpsRedirection();
 
             app.UseRouting();

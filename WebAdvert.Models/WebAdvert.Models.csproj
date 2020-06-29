@@ -9,6 +9,8 @@
     <RepositoryUrl>https://github.com/sagarviradiya/WebAdvert.API</RepositoryUrl>
     <AssemblyName>WebAdvert.Models</AssemblyName>
     <PackageId>WebAdvert.Models1</PackageId>
+    <Version>1.0.1</Version>
+    <Description>Added advertconfirmedmessage class</Description>
   </PropertyGroup>
 
   <ItemGroup>
